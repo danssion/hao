@@ -11,7 +11,7 @@ services:
   # 服务名称
   mongo:
     # 安装镜像
-    image: mongo:4.2.3
+    image: registry.cn-beijing.aliyuncs.com/public-dk/mongo:4.2.22
     # 容器名称
     container_name: mongo
     restart: always
@@ -38,7 +38,7 @@ services:
       - huasenNetwork
 
   redis:
-    image: redis:6.0.10-alpine
+    image: registry.cn-beijing.aliyuncs.com/public-dk/redis:6.2.14-alpine
     container_name: redis
     restart: always
     privileged: true
@@ -56,7 +56,7 @@ services:
       - huasenNetwork
 
   nginx:
-    image: nginx:1.23.1
+    image: registry.cn-beijing.aliyuncs.com/public-dk/nginx:1.23.4
     container_name: nginx
     restart: always
     volumes:
@@ -68,7 +68,7 @@ services:
     # 端口暴露
     ports:
       # 宿主机:容器
-      - 80:80
+      - 8080:80
 
       # 详细语法
       # - target: 80 # 容器内
@@ -81,7 +81,7 @@ services:
       - huasenNetwork
 
   jenkins:
-    image: jenkins/jenkins:lts
+    image: registry.cn-beijing.aliyuncs.com/public-dk/jenkins:lts
     container_name: jenkins
     restart: always
     privileged: true
@@ -96,7 +96,7 @@ services:
       - /usr/bin/docker:/usr/bin/docker
       - /usr/lib/x86_64-linux-gnu/libltdl.so.7:/usr/lib/x86_64-linux-gnu/libltdl.so.7
     ports:
-      - "8080:8080"
+      - "8081:8080"
     environment:
       - TZ=Asia/Shanghai
     networks:
@@ -117,7 +117,7 @@ services:
       - ./huasen-store/:/app/huasen-store
       - ./huasen-server/setting.json:/app/huasen-server/setting.json
     ports:
-      - "3000:3000"
+      - "3001:3000"
       - "8181:8181"
     environment:
       - TZ=Asia/Shanghai

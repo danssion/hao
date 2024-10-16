@@ -1,13 +1,12 @@
 {
   "site": {
-    "brandName": "花森",
+    "brandName": "好的 AI",
     "brandUrl": "",
-    "redirectUrl": "http://huasenjio.top/",
-    "guidePageName": "花森小窝",
-    "guidePageUrl": "http://huasenjio.top/",
+    "redirectUrl": "http://60.205.94.116:8080/",
+    "guidePageName": "好的 AI",
+    "guidePageUrl": "http://60.205.94.116:8080/",
     "footerHtml": "",
-    "openLabelClassification": false,
-    "autoIOWenIcon": false,
+    "openLabelClassification": true,
     "jwt": "",
     "jwtLiveTime": 604800,
     "serviceQRCodeUrl": ""
@@ -39,10 +38,10 @@
     }
   },
   "mail": {
-    "host": "smtp.163.com",
-    "port": 465,
-    "user": "huasenjio@163.com",
-    "mtp": "HWIDIXVBPESBFBCM"
+    "host": "smtp.zoho.com",
+    "port": 587,
+    "user": "service@coinfirefly.com",
+    "mtp": "svs@coinFF202"
   },
   "article": {
     "changelog": "648c79d1cdf0f0076b134525",

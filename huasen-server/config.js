@@ -41,7 +41,7 @@ const POOL_TOKEN = 'POOL_TOKEN';
 const DB = {
   name: 'huasenjio', // 角色名
   password: 'Mongo12345*', // 角色密码
-  ip: MODE == 'dev' ? '127.0.0.1' : 'mongo', // 数据库地址
+  ip: MODE == 'dev' ? '192.168.0.135' : '192.168.0.135', // 数据库地址
   port: 37017, // 端口
   dbName: 'huasen', // 数据库名
 };
@@ -55,18 +55,18 @@ const WS = {
 // redis连接配置
 const REDIS = {
   port: 7379, // 端口号
-  host: MODE == 'dev' ? '127.0.0.1' : 'redis', // redis地址
+  host: MODE == 'dev' ? '192.168.0.135' : '192.168.0.135', // redis地址
   password: 'Redis12345*', // redis密码
 };
 
 // QQ邮箱服务配置示例
 const QQ_MAIL = {
-  host: 'smtp.qq.com', // QQ邮箱厂商
-  port: 465,
+  host: 'smtp.zoho.com', // QQ邮箱厂商
+  port: 587,
   secure: true,
   auth: {
-    user: 'QQ邮箱', //  发送方邮箱地址
-    pass: 'QQ邮箱 mtp', //  自己申请的mtp的通行码
+    user: 'service@coinfirefly.com', //  发送方邮箱地址
+    pass: 'svs@coinFF2024', //  自己申请的mtp的通行码
   },
 };
 
@@ -74,11 +74,20 @@ const QQ_MAIL = {
 const MAIL = {
   host: _.get(setting, 'mail.host') || QQ_MAIL.host,
   port: _.get(setting, 'mail.port') || QQ_MAIL.port,
-  secure: true,
+  secure: false,
   auth: {
     user: _.get(setting, 'mail.user') || QQ_MAIL.auth.user,
+    user: 'service@coinfirefly.com',
     pass: _.get(setting, 'mail.mtp') || QQ_MAIL.auth.pass,
+    pass: 'svs@coinFF2024',
   },
+  logger: true,  // 开启日志记录
+  debug: true,    // 开启调试模式，查看详细的 SMTP 请求和响
+  tls: {
+    // 仅用于调试时禁用证书验证（生产环境中请设置为 true）
+    rejectUnauthorized: false,
+    minVersion: 'TLSv1.2', // 强制使用 TLS 1.2 及更高版本
+  }
 };
 
 // 站点配置
