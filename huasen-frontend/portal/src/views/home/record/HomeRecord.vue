@@ -245,7 +245,7 @@ export default {
 <style lang="scss" scoped>
 .home-record {
   width: 100%;
-  margin: 285px auto 0 auto;
+  margin: 165px auto 0 auto;
   padding: 10px 0 20px 0;
   background-color: var(--gray-0);
   header {
