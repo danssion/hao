@@ -22,6 +22,7 @@ try {
     // 连接docker-compose内的redis容器
     ioRedisClient = new ioRedis({
       host: REDIS.host,
+      port: REDIS.port,
       password: REDIS.password,
     });
   }
