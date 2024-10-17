@@ -14,7 +14,7 @@ mongoose.set('useCreateIndex', true); // 配置设置
 let mongoUrl = null;
 
 if (MODE === 'pro') {
-  mongoUrl = `mongodb://${DB.name}:${DB.password}@${DB.ip}/${DB.dbName}?authSource=${DB.dbName}`;
+  mongoUrl = `mongodb://${DB.name}:${DB.password}@${DB.ip}:${DB.port}/${DB.dbName}?authSource=${DB.dbName}`;
 } else {
   mongoUrl = `mongodb://${DB.name}:${DB.password}@${DB.ip}:${DB.port}/${DB.dbName}?authSource=${DB.dbName}`;
 }
