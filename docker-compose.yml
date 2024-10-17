@@ -121,8 +121,8 @@ services:
       - "8181:8181"
     environment:
       - TZ=Asia/Shanghai
-    depends_on:
-      - mongo
-      - redis
+    #depends_on:
+    #  - mongo
+    #  - redis
     networks:
       - huasenNetwork
